@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Legacy Interiors | Premium Interior Design Solutions</title>
+    <title>Profile Interiors | Premium Interior Design Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css">
     <style>
       body {
-        font-family: "Poppins", sans-serif;
-        scroll-behavior: smooth;
-      }
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
       h1,
       h2,
       h3 {
@@ -94,13 +98,39 @@
   .animate-bounce-slow {
     animation: bounceSlow 2s ease-in-out infinite;
   }
+
+  .bounce-gradient {
+  background: linear-gradient(90deg, #facc15 0%, #f59e42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px #facc15aa);
+  text-shadow: 0 0 12px #facc15, 0 2px 24px #f59e42;
+}
+
+@keyframes bounceGlow {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 16px #facc15aa);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.12) rotate(-3deg);
+    filter: drop-shadow(0 0 32px #facc15cc);
+  }
+}
+
+.animate-bounce-glow {
+  animation: bounceGlow 2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
+}
    </style>
   </head>
   <body class="antialiased text-gray-800">
     <nav id="navbar" class="fixed inset-x-0 top-0 z-50 bg-white/30 backdrop-blur-md transition-all duration-300">
       <div class="container mx-auto flex items-center justify-between px-6 py-4">
         <a href="#home" class="text-3xl font-bold tracking-wide flex items-end">
-          <span class="text-yellow-500">L</span><span>EGACY</span>
+          <span class="bounce-gradient animate-bounce-glow font-playfair text-[90px] md:text-[120px] leading-none"></span>
+          <span class="ml-1 font-playfair"><span class="text-yellow-400">P</span>ROFILE</span>
         </a>
         <div class="hidden md:flex space-x-8 text-lg">
           <a href="index.html" class="nav-link">Home</a>
@@ -128,29 +158,19 @@
 
 <header class="relative h-screen overflow-hidden" id="home">
  
-  <div class="absolute inset-0 w-full h-full" id="hero-slides">
-    <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10">
-      <img src="images/main1.jpg" alt="Slide 1" class="w-full h-full object-cover">
-    </div>
-    <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
-      <img src="images/main2.jpg" alt="Slide 2" class="w-full h-full object-cover">
-    </div>
-    <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
-      <img src="images/main3.jpg" alt="Slide 3" class="w-full h-full object-cover">
-    </div>
-     <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
-      <img src="images/main4.jpg" alt="Slide 4" class="w-full h-full object-cover">
-    </div>
-  </div>
-
-
-  <div class="absolute inset-0 bg-black bg-opacity-50 z-20"></div>
+  <div class="absolute inset-0 w-full h-full">
+  <video autoplay muted loop playsinline class="w-full h-full object-cover">
+    <source src="video/mainclip.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<div class="absolute inset-0 bg-black bg-opacity-50 z-20"></div>
 
 
   <div class="container mx-auto px-6 z-30 relative text-center h-full flex flex-col justify-center items-center">
-    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 flex items-end">
-      <span class="text-yellow-500 text-[90px] md:text-[120px] leading-none font-playfair animate-bounce-slow">L</span>
-      <span class="ml-1">EGACY</span>
+    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 flex items-end font-playfair">
+      <span class="bounce-gradient animate-bounce-glow text-[90px] md:text-[120px] leading-none">P</span>
+      <span class="ml-1">ROFILE INTERIORS</span>
     </h1>
     <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl">
       Elevating interiors with bespoke designs that reflect your personality and lifestyle
@@ -383,9 +403,8 @@
                     <!-- Phone -->
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                         </div>
                         <a href="tel:+91 9961547174" class="text-gray-600 hover:underline">+91 9961547174</a>
@@ -394,14 +413,14 @@
                     <!-- Location -->
                     <div class="flex items-center">
                         <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </div>
-                        <a href="https://www.google.com/maps/place/Kozhikode,+Kerala/@11.255858,75.6456574,11z/data=!3m1!4b1!4m6!3m5!1s0x3ba65938563d4747:0x32150641ca32ecab!8m2!3d11.2488425!4d75.783921!16zL20vMGZrYmg?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-gray-600 hover:underline">kozhikode,Kerala</a>
+                        <a href="https://www.google.com/maps/place/Feroke,+Kerala/@11.1762237,75.8231733,14z/data=!3m1!4b1!4m6!3m5!1s0x3ba650968482c131:0x719dca021ac7bfd7!8m2!3d11.1734548!4d75.8352429!16zL20vMDl0cTdw?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-gray-600 hover:underline">Feroke, Kozhikode</a>
                     </div>
                 </div>
             </div>
@@ -429,16 +448,7 @@
         <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500">
     </div>
 
-    <div class="mb-6">
-        <label for="project-type" class="block text-gray-700 font-medium mb-2">Project Type</label>
-        <select id="project-type" name="projectType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500">
-            <option value="">Select project type</option>
-            <option value="residential">Residential</option>
-            <option value="commercial">Commercial</option>
-            <option value="hospitality">Hospitality</option>
-            <option value="other">Other</option>
-        </select>
-    </div>
+   
 
     <div class="mb-6">
         <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
@@ -458,7 +468,7 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between mb-8">
                 <div class="mb-8 md:mb-0">
-                    <a href="#" class="text-2xl font-bold mb-4 inline-block">LEGACY</a>
+                    <a href="#" class="text-2xl font-bold mb-4 inline-block">PROFILE INTERIORS</a>
                     <p class="max-w-xs opacity-80">Creating spaces that inspire and delight through thoughtful design.</p>
                 </div>
                 
@@ -493,7 +503,7 @@
             <a href="tel:+91 9961547174" class="hover:underline">+91 9961547174</a>
         </li>
         <li class="opacity-80">
-            <a href="https://www.google.com/maps/place/Kozhikode,+Kerala/@11.255858,75.6456574,11z/data=!3m1!4b1!4m6!3m5!1s0x3ba65938563d4747:0x32150641ca32ecab!8m2!3d11.2488425!4d75.783921!16zL20vMGZrYmg?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:underline">Kozhikode, Kerala</a>
+            <a href="https://www.google.com/maps/place/Feroke,+Kerala/@11.1762237,75.8231733,14z/data=!3m1!4b1!4m6!3m5!1s0x3ba650968482c131:0x719dca021ac7bfd7!8m2!3d11.1734548!4d75.8352429!16zL20vMDl0cTdw?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="hover:underline">Feroke, Kerala</a>
         </li>
     </ul>
 </div>
@@ -502,7 +512,7 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm opacity-80 mb-4 md:mb-0">© 2025 Legacy Interiors. All rights reserved.</p>
+                <p class="text-sm opacity-80 mb-4 md:mb-0">© 2025 Profile Interiors. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="#" class="opacity-80 hover:opacity-100 transition">Privacy Policy</a>
                     <a href="#" class="opacity-80 hover:opacity-100 transition">Terms of Service</a>
@@ -586,6 +596,29 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 5000);
 });
     </script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Collect form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+    // Build WhatsApp message
+    const text =
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `Phone: ${phone}%0A` +
+        `Message: ${message}`;
+
+    // WhatsApp number (change if needed)
+    const whatsappNumber = '919961547174';
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappURL, '_blank');
+});
+</script>
 </body>
 </html>
 

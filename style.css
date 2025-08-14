@@ -1,9 +1,12 @@
-
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
         
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+        }
+        
+        .font-playfair {
+          font-family: 'Playfair Display', serif;
         }
         
         h1, h2, h3 {
@@ -24,6 +27,63 @@
         }
         
         .navbar-scrolled {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+          position: relative;
+          transition: color 0.3s ease;
+        }
+        .nav-link::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 2px;
+          width: 0;
+          background: #eab308;
+          transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+          width: 100%;
+        }
+        
+        @keyframes bounceSlow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-12px);
+          }
+        }
+        
+        .animate-bounce-slow {
+          animation: bounceSlow 2s ease-in-out infinite;
+        }
+        
+        .bounce-gradient {
+          background: linear-gradient(90deg, #facc15 0%, #f59e42 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          filter: drop-shadow(0 0 16px #facc15aa);
+          text-shadow: 0 0 12px #facc15, 0 2px 24px #f59e42;
+        }
+        
+        @keyframes bounceGlow {
+          0%, 100% {
+            transform: translateY(0) scale(1);
+            filter: drop-shadow(0 0 16px #facc15aa);
+          }
+          50% {
+            transform: translateY(-18px) scale(1.12) rotate(-3deg);
+            filter: drop-shadow(0 0 32px #facc15cc);
+          }
+        }
+        
+        .animate-bounce-glow {
+          animation: bounceGlow 2s cubic-bezier(.68,-0.55,.27,1.55) infinite;
         }
